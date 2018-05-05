@@ -13,10 +13,10 @@
   "author": {
     "name": "Sam Verschueren",
     "email": "sam.verschueren@gmail.com",
-    "url": "github.com/SamVerschueren"
+    "url": "https://github.com/SamVerschueren"
   },
   "publisher": "samverschueren",
-  "icon": "icon.svg",
+  "icon": "icon.png",
   "categories": [
     "Linters"
   ],
