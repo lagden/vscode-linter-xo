@@ -1,7 +1,10 @@
-# vscode-linter-xo
+# linter-xo-2
 
 > Linter for [XO](https://github.com/sindresorhus/xo)
 
+This is fork of [linter-xo](https://github.com/SamVerschueren/vscode-linter-xo) which appear to be unmaintained.
+
+Currently it contians performance improvement and bug fixes and enable typescript support.
 
 ## Usage
 
