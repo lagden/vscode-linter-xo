@@ -124,7 +124,7 @@ class Linter {
 		const result: InitializeResult = {
 			capabilities: {
 				textDocumentSync: this.documents.syncKind,
-				codeActionProvider: true
+				// codeActionProvider: true
 			}
 		};
 
