@@ -112,7 +112,7 @@ class Linter {
 		this.connection.listen();
 	}
 
-	private initialize(params: {rootPath: string}) {
+	private initialize(params: { rootPath: string }) {
 		this.workspaceRoot = params.rootPath;
 
 		this.package = new Package(this.workspaceRoot);
@@ -124,7 +124,7 @@ class Linter {
 		const result: InitializeResult = {
 			capabilities: {
 				textDocumentSync: this.documents.syncKind,
-				// codeActionProvider: true
+			// codeActionProvider: true
 			}
 		};
 
@@ -135,7 +135,7 @@ class Linter {
 		return Files.resolveModule(this.workspaceRoot, 'xo').then(
 			(xo: any) => {
 				if (!xo.lintText) {
-					return new ResponseError(99, 'The XO library doesn\'t export a lintText method.', {retry: false});
+					return new ResponseError(99, 'The XO library doesn\'t export a lintText method.', { retry: false });
 				}
 
 				this.lib = xo;
@@ -144,7 +144,7 @@ class Linter {
 			},
 			(err) => {
 				if (this.package.isDependency('xo')) {
-					throw new ResponseError<InitializeError>(99, 'Failed to load XO library. Make sure XO is installed in your workspace folder using \'npm install xo\' and then press Retry.', {retry: true});
+					throw new ResponseError<InitializeError>(99, 'Failed to load XO library. Make sure XO is installed in your workspace folder using \'npm install xo\' and then press Retry.', { retry: true });
 				}
 				throw err
 			});
@@ -194,7 +194,7 @@ class Linter {
 					return;
 				}
 
-				const options:any = this.options;
+				const options: any = this.options;
 				options.cwd = this.workspaceRoot;
 				options.filename = fsPath
 
@@ -209,7 +209,7 @@ class Linter {
 					return diagnostic;
 				});
 
-				this.connection.sendDiagnostics({uri, diagnostics});
+				this.connection.sendDiagnostics({ uri, diagnostics });
 			});
 	}
 
