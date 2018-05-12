@@ -142,11 +142,11 @@ class Linter {
 
 				return result;
 			},
-			(err) => {
+			() => {
 				if (this.package.isDependency('xo')) {
 					throw new ResponseError<InitializeError>(99, 'Failed to load XO library. Make sure XO is installed in your workspace folder using \'npm install xo\' and then press Retry.', { retry: true });
 				}
-				throw err
+				return result;
 			});
 	}
 
