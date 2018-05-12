@@ -18,7 +18,8 @@
     "publisher": "bryan-chen",
     "icon": "icon.png",
     "categories": [
-        "Linters"
+        "Linters",
+        "Formatters"
     ],
     "engines": {
         "vscode": "^1.16.0"
@@ -45,6 +46,12 @@
                     "type": "object",
                     "default": {},
                     "description": "The xo options object to provide args to the xo command."
+                },
+                "xo.format.enable": {
+                  "scope": "resource",
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Enable 'xo --fix' as a formatter"
                 }
             }
         },
